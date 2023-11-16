@@ -135,3 +135,30 @@ function pointsScored(playerName) {
         }
     }
 }
+
+function shoeSize(playerName){
+
+    for (let team in object) {
+        for (let player in object[team].players) {
+            if (playerName === player) {
+                return object[team].players[player].shoe;
+            }
+        }
+    }
+
+}
+
+console.log (shoeSize("Alan Anderson"))
+
+
+function teamColors(teamName){
+    for (let team in object) {
+            if (teamName === object[team].teamName) {
+                return object[team].colors
+            }
+        }
+    }
+
+
+
+console.log (teamColors("Brooklyn Nets"))
