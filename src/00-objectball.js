@@ -115,22 +115,23 @@ return {
 }
 }
 //console.log(gameInfo);
-
+let object = gameObject()
 function homeTeamName(){
-    let object = gameObject()
     return object["home"]["teamName"]
 }
 
 console.log (homeTeamName())
 
-function pointsScored(playerName){
-    for (key in gameObject){
-        console.log(key.players.playerName)
-        if (playerName == key.players.playerName) { 
-            return key.playerName.points
-        }
-    }
-
-}
 
 console.log (pointsScored("Alan Anderson"))
+
+
+function pointsScored(playerName) {
+    for (let team in object) {
+        for (let player in object[team].players) {
+            if (playerName === player) {
+                return object[team].players[player].points;
+            }
+        }
+    }
+}
